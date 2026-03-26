@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
         {% if title %}
@@ -190,40 +189,75 @@
         border-color: #00ff9c;
         opacity: 1;
     }
+    @media (max-width: 768px) {
+    body {
+        padding: 8px;
+    }
+
+    .terminal-box {
+        padding: 8px;
+    }
+
+    .p-3 {
+        padding: 0.75rem !important;
+    }
+
+    .sql-table {
+        font-size: 14px;
+        min-width: 520px;
+    }
+
+    .sql-table th,
+    .sql-table td {
+        padding: 8px 10px;
+    }
+
+    .retro-terminal-btn {
+        font-size: 12px;
+        padding: 7px 8px;
+        margin: 3px;
+    }
+
+    .pixel-sprite-title {
+        margin-bottom: 12px;
+    }
+}
     </style>    
     </head>
-    <div class="pixel-sprite-title">
-    MACRO CALCULATOR
-    </div>
     <body>
-        <div class="d-flex justify-content-center align-items-center min-vh-100">
-            <div class="text-center">
-                <div class="terminal-box">
-                    <div class="p-3">    
-                        {% if current_user.is_anonymous %}
-                            <a href="{{ url_for('login') }}" class="retro-terminal-btn">LOGIN</a>
-                            <a href="{{ url_for('register') }}" class="retro-terminal-btn">REGISTER</a>
-                        {% else %}
-                            <a href="{{ url_for('index', username=current_user.username) }}" class="retro-terminal-btn">SUMMARY</a>
-                            <a href="{{ url_for('log_meal', username=current_user.username, mode='base') }}" class="retro-terminal-btn">ADD MEAL</a>
-                            <a href="{{ url_for('logout') }}" class="retro-terminal-btn">LOGOUT</a>
-                        {% endif %}
-                        <a href="{{ url_for('about') }}" class="retro-terminal-btn">ABOUT</a>
-                    </div>
-                    <hr>
-                    {% with messages=get_flashed_messages() %}
-                        {% if messages %}
-                            {% for message in messages %}
-                                <p>[ {{ message }} ]</p>
-                            {% endfor %}
-                        {% endif %}
-                    {% endwith %}
-                    <div class="mt-3">
-                        {% block content %}{% endblock %}
-                    </div>
-                </div>
+    <div class="app-shell">
+        <div class="pixel-sprite-title">
+            MACRO CALCULATOR
+        </div>
+
+        <div class="terminal-box">
+            <div class="p-3 nav-wrap">
+                {% if current_user.is_anonymous %}
+                    <a href="{{ url_for('login') }}" class="retro-terminal-btn">LOGIN</a>
+                    <a href="{{ url_for('register') }}" class="retro-terminal-btn">REGISTER</a>
+                {% else %}
+                    <a href="{{ url_for('index', username=current_user.username) }}" class="retro-terminal-btn">SUMMARY</a>
+                    <a href="{{ url_for('log_meal', username=current_user.username, mode='base') }}" class="retro-terminal-btn">ADD MEAL</a>
+                    <a href="{{ url_for('logout') }}" class="retro-terminal-btn">LOGOUT</a>
+                {% endif %}
+                <a href="{{ url_for('about') }}" class="retro-terminal-btn">ABOUT</a>
+            </div>
+
+            <hr>
+
+            {% with messages=get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>[ {{ message }} ]</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <div class="mt-3">
+                {% block content %}{% endblock %}
             </div>
         </div>
+    </div>
         <script src="{{ url_for('static', filename='bootstrap/assets/dist/js/bootstrap.bundle.min.js') }}"></script>
         <script>
             const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
