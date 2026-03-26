@@ -1,0 +1,33 @@
+    <div>
+        <p style="text-align: center;">INGREDIENTS ADDED:</p>
+        <ol class="ingredients-list">
+            {% for ing in ingredients %}
+            <li>
+                <div class="ingredient-row">
+                <span class="ingredient-text">
+                    {{ "%.1f"|format(ing['calories']) }} calories - 
+                    {{ "%.1f"|format(ing['protein']) }}g protein - 
+                    {{ "%.1f"|format(ing['fat']) }}g fat
+                </span>
+                <form action="" method="POST" novalidate class="rmv-form">
+                    {{ action.hidden_tag() }}
+                    <input type="hidden" name="index" value="{{ loop.index0 }}">
+                    {{ action.remove(class="rmv-btn") }}
+                </form>
+                </div>
+            </li>
+            {% endfor %}
+        </ol>
+        {% if ingredients %}
+        <p style="text-align: center;">TOTAL:</p>
+        <p>
+            {{ "%.1f"|format(total_cal) }} calories - 
+            {{ "%.1f"|format(total_pro) }}g protein - 
+            {{ "%.1f"|format(total_fat) }}g fat
+        </p>
+        <form action="" method="POST" novalidate>
+            {{ action.hidden_tag() }}    
+            {{ action.submit(class="retro-terminal-btn") }}
+        </form>
+        {% endif %}
+    </div>

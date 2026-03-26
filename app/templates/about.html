@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="terminal-box mx-auto mt-4 p-4" style="max-width: 900px;">
+    <h1 class="text-center mb-4">About</h1>
+
+    <p>
+        This is a simple daily macro tracker made for people who are already comfortable tracking their own macros.
+        I got tired of the paywalls in other apps like MyFitnessPal and wanted something much more straightforward:
+        just log your meals and see your running totals for the day.
+    </p>
+
+    <p>
+        Add a meal, and your daily calories, protein, and fat will automatically update on the summary page.
+        The goal is to keep tracking quick, simple, and easy.
+    </p>
+
+    <hr>
+
+    <h3>Why no carbs?</h3>
+    <p>
+        Carbs can make things more complicated because different types of fiber can affect the true calorie value
+        of total carbs. Instead of forcing a carb target, this app gives you the freedom to choose your protein
+        and fat goals for a given calorie target. You can then fill the rest of your calories with carbs however
+        you prefer.
+    </p>
+
+    <hr>
+
+    <h3>Logging Options</h3>
+
+    <h5>By Servings</h5>
+    <p>
+        Use this when you already know how many servings you are going to eat.
+        Enter the macros for one serving, then enter the number of servings, and the app will calculate the totals for you.
+    </p>
+
+    <h5>By Weight</h5>
+    <p>
+        Use this when you do not know the number of servings ahead of time, but you do know the serving size by weight.
+        Enter the weight per serving and the amount you are eating, and the app will calculate the totals for you.
+    </p>
+
+    <h5>Quick Add</h5>
+    <p>
+        Use this when you already know the total calories, protein, and fat for a food or meal.
+        This is the fastest option for logging something simple without extra calculations.
+    </p>
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if meals %}   
+<div class="table-wrap">
+    <table class="sql-table">
+        <thead>
+            <tr>
+                <th>Meal #</th>
+                <th>Calories</th>
+                <th>Protein</th>
+                <th>Fat</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for meal in meals %}
+            <tr class="meal-num">
+                <td>
+                    {{ loop.index }}
+                    <form action="" method="POST" novalidate class="rmv-form" onsubmit="return confirm('Delete meal?')">
+                    {{ action.hidden_tag() }}
+                    <input type="hidden" name="meal_id" value="{{ meal.id }}">
+                    {{ action.remove(class="rmv-btn") }}
+                    </form>
+                </td>
+                <td>{{ "%.1f"|format(meal.calories) }}</td>
+                <td>{{ "%.1f"|format(meal.protein) }}g</td>
+                <td>{{ "%.1f"|format(meal.fat) }}g</td>
+                <td>{{ meal.local_time(tz_name).strftime("%H:%M") }}</td>
+            </tr>
+            {% endfor %}
+
+            <tr class="total-row">
+                <td colspan="1">TOTAL</td>
+                <td class="num">{{ "%.1f"|format(total_calories) }}</td>
+                <td class="num">{{ "%.1f"|format(total_protein) }}g</td>
+                <td class="num">{{ "%.1f"|format(total_fat) }}g</td>
+                <td><a href="{{ url_for('settings') }}" class="nav-btn" style="font-size: 12px;">CHANGE TARGETS</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p style="text-align: center; font-size: 20px;">Macros remaining:</p>
+<div style="color: #abecd6; text-align: center;">
+    <p>{{ "%.1f"|format(user.target_calories - total_calories) }} - Calories</p>
+    <p>{{ "%.1f"|format(user.target_protein - total_protein) }}g - Protein</p>
+    <p>{{ "%.1f"|format(user.target_fat - total_fat) }}g - Fat</p>
+</div>
+<br>
+<form action="" method="POST" novalidate class="rmv-form" onsubmit="return confirm('Start new day? All your meals will be deleted.')">
+                    {{ action.hidden_tag() }}
+                    {{ action.new_day(class="rmv-btn") }}
+                    </form>
+{% else %}
+<p style="text-align: center;">No meals added yet.</p>
+{% endif %}
+{% endblock %}
