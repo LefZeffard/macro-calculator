@@ -35,18 +35,20 @@ body {
 }
 
 .app-shell {
-    text-align: center;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .terminal-box {
-    display: inline-block;
-    text-align: left;
+    display: fit-content;
     width: auto;
     border: 1px solid #00ff9c;
     padding: 12px;
     background-color: black;
     box-shadow: 0 0 10px #00ff9c;
-    max-width: 900px;
+    max-width: 100%;
+    margin: 0 auto;
 }
     
     .table-wrap {
@@ -196,6 +198,8 @@ body {
     hr {
         border-color: #00ff9c;
         opacity: 1;
+        width: 100%;
+        margin: 16px 0;
     }
     @media (max-width: 768px) {
     body {
