@@ -5,12 +5,14 @@
         {% if mode == 'base' %}
             <p style="text-align: center;">ADD YOUR INGREDIENTS</p>
         {% endif %}
+        <div style="text-align: center;">
         <a href="{{ url_for('log_meal', mode='servings') }}" class="nav-btn
         {% if mode == 'servings' %}active{% endif %}">BY SERVINGS</a>
         <a href="{{ url_for('log_meal', mode='weight') }}" class="nav-btn
         {% if mode == 'weight' %}active{% endif %}">BY WEIGHT</a>
         <a href="{{ url_for('log_meal', mode='quick') }}" class="nav-btn
         {% if mode == 'quick' %}active{% endif %}">QUICK ADD</a>
+        </div>
         <form action="" method="POST" novalidate>
             {% if mode=='servings' %}
                 {{ form.hidden_tag() }}
