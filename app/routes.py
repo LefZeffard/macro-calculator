@@ -23,10 +23,12 @@ def index():
                 db.session.delete(meal_delete)
                 db.session.commit()
         elif action.new_day.data:
+            
             db.session.execute(
                 sa.delete(Meal).where(Meal.user_id == current_user.id)
                 )
             db.session.commit()
+            session["ingredients"] = []
         return redirect(url_for('index'))
     meals = user.meals
     total_calories = sum(i.calories for i in meals)
