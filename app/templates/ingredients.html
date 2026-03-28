@@ -25,6 +25,11 @@
             {{ "%.1f"|format(total_pro) }}g protein - 
             {{ "%.1f"|format(total_fat) }}g fat
         </p>
+        <div style="color: #abecd6; text-align: center;">
+            <p>{{ "%.1f"|format(total_cal) }} - Calories</p>
+            <p>{{ "%.1f"|format(total_pro) }}g - Protein</p>
+            <p>{{ "%.1f"|format(total_fat) }}g - Fat</p>
+        </div>
         <form action="" method="POST" novalidate>
             {{ action.hidden_tag() }}    
             {{ action.submit(class="retro-terminal-btn") }}
