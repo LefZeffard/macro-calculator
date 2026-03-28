@@ -16,28 +16,28 @@
                 {{ form.hidden_tag() }}
                 <p>
                     {{ form.servings.label }}<br>
-                    {{ form.servings(size=32, type="number", step="any", autocomplete="off", min=0) }}<br>
+                    {{ form.servings(type="number", step="any", autocomplete="off", min=0, class="macro-input") }}<br>
                     {% for error in form.servings.errors %}
                     <span style="color: #00ff9c;">-{{ error }}-</span>
                     {% endfor %}
                 </p>
                 <p>
                     {{ form.calories.label }}<br>
-                    {{ form.calories(size=32, type="number", step="any", autocomplete="off", min=0) }}<br>
+                    {{ form.calories(type="number", step="any", autocomplete="off", min=0, class="macro-input") }}<br>
                     {% for error in form.calories.errors %}
                     <span style="color: #00ff9c;">-{{ error }}-</span>
                     {% endfor %}
                 </p>
                 <p>
                     {{ form.protein.label }}<br>
-                    {{ form.protein(size=32, type="number", step="any", autocomplete="off", min=0) }}<br>
+                    {{ form.protein(type="number", step="any", autocomplete="off", min=0, class="macro-input") }}<br>
                     {% for error in form.protein.errors %}
                     <span style="color: #00ff9c;">-{{ error }}-</span>
                     {% endfor %}
                 </p>
                 <p>
                     {{ form.fat.label }}<br>
-                    {{ form.fat(size=32, type="number", step="any", autocomplete="off", min=0) }}<br>
+                    {{ form.fat(type="number", step="any", autocomplete="off", min=0, class="macro-input") }}<br>
                     {% for error in form.fat.errors %}
                     <span style="color: #00ff9c;">-{{ error }}-</span>
                     {% endfor %}
@@ -50,35 +50,35 @@
                 {{ form.hidden_tag() }}
                 <p>
                     {{ form.weight_servings.label }}<br>
-                    {{ form.weight_servings(size=32, type="number", step="any", autocomplete="off", min=0) }}<br>
+                    {{ form.weight_servings(type="number", step="any", autocomplete="off", min=0, class="macro-input") }}<br>
                     {% for error in form.weight_servings.errors %}
                     <span style="color: #00ff9c;">-{{ error }}-</span>
                     {% endfor %}
                 </p>
                 <p>
                     {{ form.weight.label }}<br>
-                    {{ form.weight(size=32, type="number", step="any", autocomplete="off", min=0) }}<br>
+                    {{ form.weight(type="number", step="any", autocomplete="off", min=0, class="macro-input") }}<br>
                     {% for error in form.weight.errors %}
                     <span style="color: #00ff9c;">-{{ error }}-</span>
                     {% endfor %}
                 </p>
                 <p>
                     {{ form.calories.label }}<br>
-                    {{ form.calories(size=32, type="number", step="any", autocomplete="off", min=0) }}<br>
+                    {{ form.calories(type="number", step="any", autocomplete="off", min=0, class="macro-input") }}<br>
                     {% for error in form.calories.errors %}
                     <span style="color: #00ff9c;">-{{ error }}-</span>
                     {% endfor %}
                 </p>
                 <p>
                     {{ form.protein.label }}<br>
-                    {{ form.protein(size=32, type="number", step="any", autocomplete="off", min=0) }}<br>
+                    {{ form.protein(type="number", step="any", autocomplete="off", min=0, class="macro-input") }}<br>
                     {% for error in form.protein.errors %}
                     <span style="color: #00ff9c;">-{{ error }}-</span>
                     {% endfor %}
                 </p>
                 <p>
                     {{ form.fat.label }}<br>
-                    {{ form.fat(size=32, type="number", step="any", autocomplete="off", min=0) }}<br>
+                    {{ form.fat(type="number", step="any", autocomplete="off", min=0, class="macro-input") }}<br>
                     {% for error in form.fat.errors %}
                     <span style="color: #00ff9c;">-{{ error }}-</span>
                     {% endfor %}
@@ -90,21 +90,21 @@
                 {{ form.hidden_tag() }}
                 <p>
                     {{ form.calories.label }}<br>
-                    {{ form.calories(size=32, type="number", step="any", autocomplete="off", min=0) }}<br>
+                    {{ form.calories(type="number", step="any", autocomplete="off", min=0, class="macro-input") }}<br>
                     {% for error in form.calories.errors %}
                     <span style="color: #00ff9c;">-{{ error }}-</span>
                     {% endfor %}
                 </p>
                 <p>
                     {{ form.protein.label }}<br>
-                    {{ form.protein(size=32, type="number", step="any", autocomplete="off", min=0) }}<br>
+                    {{ form.protein(type="number", step="any", autocomplete="off", min=0, class="macro-input") }}<br>
                     {% for error in form.protein.errors %}
                     <span style="color: #00ff9c;">-{{ error }}-</span>
                     {% endfor %}
                 </p>
                 <p>
                     {{ form.fat.label }}<br>
-                    {{ form.fat(size=32, type="number", step="any", autocomplete="off", min=0) }}<br>
+                    {{ form.fat(type="number", step="any", autocomplete="off", min=0, class="macro-input") }}<br>
                     {% for error in form.fat.errors %}
                     <span style="color: #00ff9c;">-{{ error }}-</span>
                     {% endfor %}

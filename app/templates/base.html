@@ -131,8 +131,17 @@ body {
     padding: 1px 0;
     }   
     .ingredient-text {
-    white-space: nowrap;
+    white-space: normal;
     text-align: center;
+    overflow-wrap: anywhere;
+    }
+    .macro-line {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: center;
+}
+    .macro-input {
+    width: min(100%, 18rem);
     }
     .rmv-btn {
     margin: 0;
